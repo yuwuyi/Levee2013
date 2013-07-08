@@ -11,3 +11,8 @@
 *.lai
 *.la
 *.a
+
+Win32\*
+Levee2013\GeneratedFiles\*
+*.swp
+*.*~

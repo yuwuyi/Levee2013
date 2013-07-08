@@ -1,11 +1,13 @@
 #include "viewport.h"
 #include <QPointF>
+#include <QtOpenGL>
 #include <QMouseEvent>
 #include "Renderer.h"
 
 typedef Vector3f vec3;
 typedef Vector3d vec3d;
 typedef Quatf quat;
+
 
 ViewPort::ViewPort(QWidget *parent)
 	: QGLWidget(parent)
@@ -60,8 +62,25 @@ void ViewPort::resizeGL ( int width , int height ) {
 	glMatrixMode(GL_MODELVIEW);
 }
 
+
 void ViewPort::paintGL () {
-	
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); 
+	glClearColor(1.0, 1.0, 1.0, 0.0);  
+	glPushMatrix(); 
+	glMatrixMode(GL_MODELVIEW); 
+	glLoadIdentity(); 
+
+	theCamera.SetGL(view_dist/5.0f, view_dist*5.0f, width(), height()); 
+	glColor3f(1.0f, 0, 0);
+	for (int i = -10; i < 10; ++i) {
+	glBegin(GL_TRIANGLES);
+		glVertex3f(i, i, i);
+		glVertex3f(0, i, 0);
+		glVertex3f(i, 0, i);
+	glEnd();
+	}
+	glPopMatrix(); 
+
 }
 
 
@@ -93,7 +112,6 @@ void ViewPort::mousePressEvent(QMouseEvent *event)
 	lastPos = QPointF(nx, ny);
 
 	updateGL();
-
 }
 
 
@@ -120,7 +138,7 @@ void ViewPort::mouseMoveEvent(QMouseEvent *event)
 	delta_y = cur_mouse_y - lastPos.y();
 	
 	if (event->buttons() & Qt::LeftButton) {
-		Rotate(lastPos.x(), lastPos.y(), cur_mouse_x, cur_mouse_y);
+		//Rotate(lastPos.x(), lastPos.y(), cur_mouse_x, cur_mouse_y);
 	} else if (event->buttons() & Qt::RightButton) {
 		Translate(delta_x, delta_y, 0);
 	}
