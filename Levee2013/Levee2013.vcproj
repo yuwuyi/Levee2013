@@ -396,6 +396,14 @@
 			Name="Data"
 			>
 			<File
+				RelativePath=".\Element.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Element.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Grid.cpp"
 				>
 			</File>
@@ -477,6 +485,14 @@
 				RelativePath=".\Mesh.h"
 				>
 			</File>
+		</Filter>
+		<Filter
+			Name="Octree"
+			>
+		</Filter>
+		<Filter
+			Name="Test"
+			>
 		</Filter>
 	</Files>
 	<Globals>

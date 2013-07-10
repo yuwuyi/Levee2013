@@ -32,12 +32,29 @@ Mesh* MeshParser::parse(const char *filename) {
 		std::string line;
 		getline(input, line);
 		std::stringstream ss(line);
-		int id, x, y, depth;
+		int id;
+		double x, y, depth;
 		ss >> id >> x >> y >> depth;
 		
 		Vertex *v = new Vertex(id, x, y, depth);
 		mesh->m_vertices[id] = v;
+		if (id == numNode) {
+			break;
+		}
 	}
+
+	for (int i = 0; i < numElement; ++i) {
+		std::string line;
+		getline(input, line);
+		mesh->m_elementPool.push_back(line);
+	}
+
+
+	//get to the 3rd section
+	for (int i = 0; i < numElement; ++i) {
+
+	}
+
 
 	input.close();
 	return mesh;
