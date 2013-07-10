@@ -159,7 +159,6 @@
 	<Files>
 		<Filter
 			Name="Source Files"
-			Filter="cpp;cxx;c;def"
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
@@ -181,7 +180,6 @@
 		</Filter>
 		<Filter
 			Name="Header Files"
-			Filter="h"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
@@ -286,7 +284,6 @@
 		</Filter>
 		<Filter
 			Name="Generated Files"
-			Filter="moc;h;cpp"
 			UniqueIdentifier="{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}"
 			SourceControlFiles="false"
 			>
@@ -386,6 +383,14 @@
 				RelativePath=".\GridParser.h"
 				>
 			</File>
+			<File
+				RelativePath=".\MeshParser.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\MeshParser.h"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="Data"
@@ -396,6 +401,14 @@
 			</File>
 			<File
 				RelativePath=".\Grid.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Vertex.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Vertex.h"
 				>
 			</File>
 		</Filter>
@@ -450,6 +463,18 @@
 			</File>
 			<File
 				RelativePath=".\Vector3.h"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="Mesh"
+			>
+			<File
+				RelativePath=".\Mesh.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Mesh.h"
 				>
 			</File>
 		</Filter>

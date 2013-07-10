@@ -12,7 +12,11 @@
 *.la
 *.a
 
-Win32\*
-Levee2013\GeneratedFiles\*
+Win32*
+Levee2013\G*
+*.user
 *.swp
 *.*~
+*.obj
+*.ncb
+*.suo
